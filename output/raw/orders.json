@@ -1,0 +1,341 @@
+[
+  {
+    "order_id": "0c090487-9782-41d3-9ba6-45e4dceace11",
+    "user_id": "fb2fd196-f0c3-4440-9556-62129d31dfad",
+    "amount": 125.5,
+    "currency": "USD",
+    "created_at": "2025-08-20T15:23:10Z",
+    "items": [
+      {
+        "sku": "a8b12d92-d8d0-40dc-9a7f-4385f3de95a8",
+        "qty": 2,
+        "price": 60.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": null
+    }
+  },
+  {
+    "order_id": "0c090487-9782-41d3-9ba6-45e4dceace11",
+    "user_id": "fb2fd196-f0c3-4440-9556-62129d31dfad",
+    "amount": 130.0,
+    "currency": "USD",
+    "created_at": "2025-08-20T15:23:10Z",
+    "items": [
+      {
+        "sku": "a8b12d92-d8d0-40dc-9a7f-4385f3de95a8",
+        "qty": 2,
+        "price": 65.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "REBAJAS_DE_VERANO"
+    }
+  },
+  {
+    "order_id": "f6842c2d-74d0-40b4-9a20-23164d9945ca",
+    "user_id": "22faf6fc-52fb-4c5e-9c37-2f2a6aa6ab58",
+    "amount": 289.0,
+    "currency": "PEN",
+    "created_at": "2025-08-21T09:00:00Z",
+    "items": [
+      {
+        "sku": "29209577-42cd-4890-bba7-aad735ad2440",
+        "qty": 1,
+        "price": 289.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "LIQUIDACION_ANIVERSARIO"
+    }
+  },
+  {
+    "order_id": "0ce5109e-15d2-4310-8c9e-66693c8383f0",
+    "user_id": "e0b53e09-5977-48f3-b765-ec454b9d33af",
+    "amount": 490.0,
+    "currency": "USD",
+    "created_at": "2025-08-22T12:00:00Z",
+    "items": [
+      {
+        "sku": "648b4c93-5020-492d-913a-6b35b24be457",
+        "qty": 2,
+        "price": 245.0
+      }
+    ],
+    "metadata": null
+  },
+  {
+    "order_id": "e7a84120-ab2d-493c-98f2-588ae6291863",
+    "user_id": "92ba33fb-4422-48cf-9b73-1bd0b04dc1b6",
+    "amount": 189990.0,
+    "currency": "CLP",
+    "created_at": "2025-08-23T10:15:00Z",
+    "items": [
+      {
+        "sku": "783ea7bf-3682-4448-8ee8-bc92b78a14b4",
+        "qty": 1,
+        "price": 112990.0
+      },
+      {
+        "sku": "8f7ce0fa-ccc5-493f-890c-5113ab84b7a5",
+        "qty": 1,
+        "price": 77000.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "CYBER_LUNES_LATAM"
+    }
+  },
+  {
+    "order_id": "da2b0ac4-a132-41b5-843d-68fb3dd6f8df",
+    "user_id": "c174a45a-f30a-45ea-951c-1609bcd5766d",
+    "amount": 4598.5,
+    "currency": "MXN",
+    "created_at": "2025-08-23T14:40:00Z",
+    "items": [
+      {
+        "sku": "4296ba0a-43fb-4823-9bfa-4253d5b64bd9",
+        "qty": 2,
+        "price": 698.0
+      },
+      {
+        "sku": "7fc0c4d8-cbae-4db0-88c6-1e630376d6c4",
+        "qty": 1,
+        "price": 3202.5
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "EL_BUEN_FIN"
+    }
+  },
+  {
+    "order_id": "a21cff67-1e9f-4633-9acc-5c64f2043822",
+    "user_id": "01172ffe-a072-4f92-9232-aba34c26ffc7",
+    "amount": 359800.0,
+    "currency": "COP",
+    "created_at": "2025-08-24T11:05:00Z",
+    "items": [
+      {
+        "sku": "23fbcd5d-5ba1-4519-bf2d-d231cd8e5fa3",
+        "qty": 2,
+        "price": 179900.0
+      }
+    ],
+    "metadata": {
+      "source": "mobile_app",
+      "promo": "DIAS_SIN_IVA"
+    }
+  },
+  {
+    "order_id": "5078ed4e-8317-40cd-a846-7fdfeff83607",
+    "user_id": "99c84755-152e-484e-bdf1-e29277b6ea47",
+    "amount": 112.5,
+    "currency": "USD",
+    "created_at": "2025-08-24T16:22:00Z",
+    "items": [
+      {
+        "sku": "783ea7bf-3682-4448-8ee8-bc92b78a14b4",
+        "qty": 1,
+        "price": 112.5
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "EXCLUSIVO_APP_MOVIL"
+    }
+  },
+  {
+    "order_id": "58b455e7-302a-44a0-a17a-1e0626dfcd93",
+    "user_id": "20f7a419-e29f-407f-9457-57b118b5ebc1",
+    "amount": 278000.0,
+    "currency": "CLP",
+    "created_at": "2025-08-25T09:30:00Z",
+    "items": [
+      {
+        "sku": "fef56aea-adab-4c61-8524-bcbc25c6b160",
+        "qty": 1,
+        "price": 278000.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "CYBERDAY_CHILE"
+    }
+  },
+  {
+    "order_id": "43084e72-165c-443d-b7a2-1fcf796b2c3b",
+    "user_id": "d55f96e2-5c9f-4b3a-9e2f-3a68c82187c0",
+    "amount": 145.0,
+    "currency": "USD",
+    "created_at": "2025-08-25T13:45:00Z",
+    "items": [
+      {
+        "sku": "a8b12d92-d8d0-40dc-9a7f-4385f3de95a8",
+        "qty": 1,
+        "price": 72.5
+      },
+      {
+        "sku": "68dc73c7-64e0-4095-ac4f-d1de194fb614",
+        "qty": 1,
+        "price": 72.5
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "PACK_AUDIO_HOGAR"
+    }
+  },
+  {
+    "order_id": "49ff22db-1e26-407a-b242-889a5517d2c7",
+    "user_id": "d4cf446c-f18c-4c70-9e5d-6b5b8104c7f9",
+    "amount": 189000.0,
+    "currency": "ARS",
+    "created_at": "2025-08-26T08:00:00Z",
+    "items": [
+      {
+        "sku": "29209577-42cd-4890-bba7-aad735ad2440",
+        "qty": 1,
+        "price": 189000.0
+      }
+    ],
+    "metadata": {
+      "source": "web",
+      "promo": "CUOTAS_SIN_INTERES"
+    }
+  },
+  {
+    "order_id": "9d81ab7a-41ea-4e8a-aba9-0ea038e05f16",
+    "user_id": "7ff40dbd-2acb-4dc7-815a-1ce5eaf69d73",
+    "amount": 512.4,
+    "currency": "USD",
+    "created_at": "2025-08-26T17:10:00Z",
+    "items": [
+      {
+        "sku": "648b4c93-5020-492d-913a-6b35b24be457",
+        "qty": 1,
+        "price": 245.0
+      },
+      {
+        "sku": "8f7ce0fa-ccc5-493f-890c-5113ab84b7a5",
+        "qty": 1,
+        "price": 98.99
+      },
+      {
+        "sku": "4296ba0a-43fb-4823-9bfa-4253d5b64bd9",
+        "qty": 5,
+        "price": 33.682
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "MAYORISTA_PYMES"
+    }
+  },
+  {
+    "order_id": "0b77af18-fe20-49f7-b04e-9dd507bbf9f9",
+    "user_id": "a9f9c136-9e3a-4dd9-b81f-92bd741525f1",
+    "amount": 2199.0,
+    "currency": "MXN",
+    "created_at": "2025-08-27T12:00:00Z",
+    "items": [
+      {
+        "sku": "68dc73c7-64e0-4095-ac4f-d1de194fb614",
+        "qty": 1,
+        "price": 2199.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "ENVIO_GRATIS_NACIONAL"
+    }
+  },
+  {
+    "order_id": "4f831f33-40a9-4b95-af7b-69f1a1a4a5fd",
+    "user_id": "fb2fd196-f0c3-4440-9556-62129d31dfad",
+    "amount": 156.0,
+    "currency": "USD",
+    "created_at": "2025-08-27T19:30:00Z",
+    "items": [
+      {
+        "sku": "7fc0c4d8-cbae-4db0-88c6-1e630376d6c4",
+        "qty": 1,
+        "price": 156.0
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "CLUB_CLIENTES_FIEL"
+    }
+  },
+  {
+    "order_id": "821d4ebb-350d-4baf-af80-7310ee6c6ba3",
+    "user_id": "92ba33fb-4422-48cf-9b73-1bd0b04dc1b6",
+    "amount": 139.0,
+    "currency": "USD",
+    "created_at": "2025-08-28T10:00:00Z",
+    "items": [
+      {
+        "sku": "23fbcd5d-5ba1-4519-bf2d-d231cd8e5fa3",
+        "qty": 1,
+        "price": 139.0
+      }
+    ],
+    "metadata": {
+      "source": "mobile_app",
+      "promo": "PRIMERA_COMPRA_DESCUENTO"
+    }
+  },
+  {
+    "order_id": "0f140537-e8f0-4ef0-be10-94773a4a25ce",
+    "user_id": "e0b53e09-5977-48f3-b765-ec454b9d33af",
+    "amount": 556.49,
+    "currency": "USD",
+    "created_at": "2025-08-28T15:20:00Z",
+    "items": [
+      {
+        "sku": "fef56aea-adab-4c61-8524-bcbc25c6b160",
+        "qty": 2,
+        "price": 278.245
+      }
+    ],
+    "metadata": {
+      "source": "api",
+      "promo": "REGRESO_A_CLASES"
+    }
+  },
+  {
+    "order_id": "9a00e0b9-6a36-4145-ab1c-f2285237c36a",
+    "user_id": "fb2fd196-f0c3-4440-9556-62129d31dfad",
+    "amount": 10.0,
+    "currency": "USD",
+    "created_at": "2025-08-22T13:00:00Z",
+    "items": [],
+    "metadata": {
+      "source": "api"
+    }
+  },
+  {
+    "order_id": "9cc3afd6-c35d-48af-929a-653b32621f72",
+    "user_id": "fb2fd196-f0c3-4440-9556-62129d31dfad",
+    "amount": 5.0,
+    "currency": "USD",
+    "created_at": null,
+    "items": [
+      {
+        "sku": "a8b12d92-d8d0-40dc-9a7f-4385f3de95a8",
+        "qty": 1,
+        "price": 5.0
+      }
+    ],
+    "metadata": {
+      "source": "api"
+    }
+  },
+  "not_an_object"
+]

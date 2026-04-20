@@ -2,6 +2,7 @@ import argparse
 import json
 import logging
 import os
+import shutil
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -67,6 +68,12 @@ def main():
     os.makedirs(raw_dir, exist_ok=True)
     os.makedirs(cur, exist_ok=True)
 
+    raw_users = os.path.join(raw_dir, "users.csv")
+    raw_products = os.path.join(raw_dir, "products.csv")
+    shutil.copy2(args.users, raw_users)
+    shutil.copy2(args.products, raw_products)
+    log.info("raw: copiados users.csv y products.csv")
+
     if args.api_url:
         data = api_client.traer_pedidos_api(args.api_url)
     else:
@@ -86,12 +93,12 @@ def main():
         log.info("nada que procesar con los filtros")
         return
 
-    df = transforms.join_users(df, args.users)
+    df = transforms.join_users(df, raw_users)
     run_ts = datetime.now(timezone.utc).isoformat()
     df["ingest_ts"] = run_ts
 
-    dim_u = pd.read_csv(args.users)
-    dim_p = transforms.dim_productos(args.products)
+    dim_u = pd.read_csv(raw_users)
+    dim_p = transforms.dim_productos(raw_products)
 
     os.makedirs(os.path.join(cur, "dim_user"), exist_ok=True)
     merge_parquet(dim_u, os.path.join(cur, "dim_user", "dim_user.parquet"), "user_id")

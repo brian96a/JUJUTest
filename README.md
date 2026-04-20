@@ -1,7 +1,7 @@
 # ETL prueba técnica (local)
 
 ## Qué hace
-Lee pedidos JSON (`sample_data/` o API), join usuarios CSV, escribe `output/raw` y `output/curated` (Parquet particionado + CSV de vista).
+Lee pedidos JSON (`sample_data/` o API), copia **usuarios y productos** a `output/raw/` junto con `orders.json`, hace join usuarios → hechos, y escribe `output/curated` (Parquet particionado + CSV de vista).
 
 Diagrama ER (Mermaid): [docs/data_model.md](docs/data_model.md).
 
@@ -49,3 +49,16 @@ pytest -q
 
 ## Limitaciones
 - Merge idempotente lee parquet previo por partición: no escala a datasets enormes sin cambiar formato/tablas.
+
+## Mapa rápido vs enunciado
+| Requisito | Dónde |
+|-----------|--------|
+| Job ejecutable `src/etl_job.py` | `python -m src.etl_job ...` |
+| raw JSON + fuentes en disco | `output/raw/orders.json`, `users.csv`, `products.csv` |
+| curated particionado | `output/curated/fact_order/order_date=.../part.parquet` |
+| Idempotencia / incremental | `merge_parquet`, `--since`, `--last-processed` |
+| Retries API | `src/api_client.py` |
+| Tests pytest + mock API | `tests/test_transforms.py` |
+| DDL Redshift + queries ejemplo | `sql/redshift-ddl.sql` |
+| Decisiones (1 pág.) | `docs/design_notes.md` |
+| MSSQL opcional | No usado; CSV documentado como sustituto en notas. |
