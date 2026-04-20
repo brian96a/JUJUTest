@@ -1,9 +1,5 @@
 # Modelo de datos
 
-Fuentes vs salida (como en `sql/redshift-ddl.sql`). Join pedido–usuario: DuckDB en memoria + `read_csv_auto` sobre usuarios.
-
-Si el preview no dibuja nada: extensión **Markdown Preview Mermaid** en Cursor/VS Code, o abrí el archivo en GitHub (render Mermaid en bloques fenced).
-
 ## Entradas
 
 ```mermaid
