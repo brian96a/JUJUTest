@@ -3,14 +3,33 @@ import json
 import logging
 import os
 import shutil
+import uuid
 from datetime import datetime, timezone
 
 import pandas as pd
 
 from src import api_client, transforms
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("etl")
+
+
+def _configurar_logging(log_dir: str) -> tuple[str, str]:
+    """Consola + archivo por corrida (estilo artefacto de ejecución tipo CloudWatch en disco)."""
+    os.makedirs(log_dir, exist_ok=True)
+    run_id = uuid.uuid4().hex[:12]
+    ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    path = os.path.join(log_dir, f"run_{ts}_{run_id}.log")
+    fmt = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+    log.setLevel(logging.INFO)
+    log.propagate = False
+    log.handlers.clear()
+    fh = logging.FileHandler(path, encoding="utf-8")
+    fh.setFormatter(fmt)
+    sh = logging.StreamHandler()
+    sh.setFormatter(fmt)
+    log.addHandler(fh)
+    log.addHandler(sh)
+    return path, run_id
 
 
 def leer_checkpoint(path):
@@ -63,6 +82,18 @@ def main():
     ap.add_argument("--last-processed", default=None, help="Archivo JSON con last_created_at")
     args = ap.parse_args()
 
+    log_dir = os.path.join(args.out, "logs")
+    log_path, run_id = _configurar_logging(log_dir)
+    log.info(
+        "inicio run_id=%s log_file=%s out=%s api_url=%s since=%s last_processed=%s",
+        run_id,
+        log_path,
+        args.out,
+        args.api_url,
+        args.since,
+        args.last_processed,
+    )
+
     raw_dir = os.path.join(args.out, "raw")
     cur = os.path.join(args.out, "curated")
     os.makedirs(raw_dir, exist_ok=True)
@@ -83,14 +114,16 @@ def main():
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     df = transforms.df_pedidos(data)
+    log.info("pedidos validos tras parseo: %s filas", len(df))
     if df.empty:
-        log.info("sin pedidos validos")
+        log.info("fin_sin_salida run_id=%s razon=sin_pedidos_validos log_file=%s", run_id, log_path)
         return
 
     last_ts = leer_checkpoint(args.last_processed)
     df = filtro_incremental(df, args.since, last_ts)
+    log.info("pedidos tras filtro incremental: %s filas", len(df))
     if df.empty:
-        log.info("nada que procesar con los filtros")
+        log.info("fin_sin_salida run_id=%s razon=filtro_incremental_vacio log_file=%s", run_id, log_path)
         return
 
     df = transforms.join_users(df, raw_users)
@@ -107,17 +140,27 @@ def main():
     merge_parquet(dim_p, os.path.join(cur, "dim_product", "dim_product.parquet"), "sku")
 
     fact_base = os.path.join(cur, "fact_order")
+    n_particiones = 0
     for fecha, g in df.groupby("order_date"):
         carpeta = os.path.join(fact_base, f"order_date={fecha}")
         os.makedirs(carpeta, exist_ok=True)
         arch = os.path.join(carpeta, "part.parquet")
         merge_parquet(g, arch, "order_id")
+        n_particiones += 1
+        log.info("fact_order particion order_date=%s filas=%s -> %s", fecha, len(g), arch)
 
     df.to_csv(os.path.join(cur, "fact_order_preview.csv"), index=False)
 
     max_ts = df["created_at"].max()
     guardar_checkpoint(args.last_processed, max_ts.isoformat())
-    log.info("listo, max created_at=%s", max_ts)
+    log.info(
+        "fin_ok run_id=%s filas_fact=%s particiones=%s max_created_at=%s log_file=%s",
+        run_id,
+        len(df),
+        n_particiones,
+        max_ts,
+        log_path,
+    )
 
 
 if __name__ == "__main__":

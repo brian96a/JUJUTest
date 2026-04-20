@@ -31,6 +31,8 @@ Parquet a S3; `COPY ... FORMAT AS PARQUET`. Dimensiones: COPY o staging + polít
 ## Monitorización
 Logs con run_id, conteos, max `created_at`, errores. Métricas: duración, filas escritas, fallos API. Alertas: fallo de job, SLA de duración, cero salidas inesperadas.
 
+En local, cada corrida escribe además un archivo en `output/logs/run_<UTC>_<run_id>.log` (mismo contenido que consola): sirve como artefacto de auditoría parecido a exportar un tail de CloudWatch, sin AWS.
+
 ## Trade-offs
 No hay conexión a SQL Server en tiempo de ejecución: usuarios y productos vienen de CSV para que cualquiera clone el repo y corra el job sin instalar base de datos ni drivers.
 

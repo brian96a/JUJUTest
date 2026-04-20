@@ -1,7 +1,7 @@
 # ETL prueba técnica (local)
 
 ## Qué hace
-Lee pedidos JSON (`sample_data/` o API), copia **usuarios y productos** a `output/raw/` junto con `orders.json`, hace join usuarios → hechos, y escribe `output/curated` (Parquet particionado + CSV de vista).
+Lee pedidos JSON (`sample_data/` o API), copia **usuarios y productos** a `output/raw/` junto con `orders.json`, hace join usuarios → hechos, y escribe `output/curated` (Parquet particionado + CSV de vista). Cada ejecución deja un **log en disco** en `output/logs/run_<UTC>_<run_id>.log` (auditoría local, estilo artefacto tipo export de CloudWatch).
 
 Diagrama ER (Mermaid): [docs/data_model.md](docs/data_model.md).
 
@@ -57,6 +57,7 @@ pytest -q
 | raw JSON + fuentes en disco | `output/raw/orders.json`, `users.csv`, `products.csv` |
 | curated particionado | `output/curated/fact_order/order_date=.../part.parquet` |
 | Idempotencia / incremental | `merge_parquet`, `--since`, `--last-processed` |
+| Log de ejecución (artefacto local) | `output/logs/run_<UTC>_<run_id>.log` |
 | Retries API | `src/api_client.py` |
 | Tests pytest + mock API | `tests/test_transforms.py` |
 | DDL Redshift + queries ejemplo | `sql/redshift-ddl.sql` |

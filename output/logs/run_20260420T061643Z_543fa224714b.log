@@ -1,0 +1,14 @@
+2026-04-20 01:16:43,096 | INFO | inicio run_id=543fa224714b log_file=output/logs/run_20260420T061643Z_543fa224714b.log out=output api_url=None since=None last_processed=None
+2026-04-20 01:16:43,096 | INFO | raw: copiados users.csv y products.csv
+2026-04-20 01:16:43,103 | INFO | pedidos validos tras parseo: 16 filas
+2026-04-20 01:16:43,103 | INFO | pedidos tras filtro incremental: 16 filas
+2026-04-20 01:16:43,198 | INFO | fact_order particion order_date=2025-08-20 filas=1 -> output/curated/fact_order/order_date=2025-08-20/part.parquet
+2026-04-20 01:16:43,200 | INFO | fact_order particion order_date=2025-08-21 filas=1 -> output/curated/fact_order/order_date=2025-08-21/part.parquet
+2026-04-20 01:16:43,203 | INFO | fact_order particion order_date=2025-08-22 filas=2 -> output/curated/fact_order/order_date=2025-08-22/part.parquet
+2026-04-20 01:16:43,206 | INFO | fact_order particion order_date=2025-08-23 filas=2 -> output/curated/fact_order/order_date=2025-08-23/part.parquet
+2026-04-20 01:16:43,209 | INFO | fact_order particion order_date=2025-08-24 filas=2 -> output/curated/fact_order/order_date=2025-08-24/part.parquet
+2026-04-20 01:16:43,212 | INFO | fact_order particion order_date=2025-08-25 filas=2 -> output/curated/fact_order/order_date=2025-08-25/part.parquet
+2026-04-20 01:16:43,214 | INFO | fact_order particion order_date=2025-08-26 filas=2 -> output/curated/fact_order/order_date=2025-08-26/part.parquet
+2026-04-20 01:16:43,217 | INFO | fact_order particion order_date=2025-08-27 filas=2 -> output/curated/fact_order/order_date=2025-08-27/part.parquet
+2026-04-20 01:16:43,220 | INFO | fact_order particion order_date=2025-08-28 filas=2 -> output/curated/fact_order/order_date=2025-08-28/part.parquet
+2026-04-20 01:16:43,221 | INFO | fin_ok run_id=543fa224714b filas_fact=16 particiones=9 max_created_at=2025-08-28 10:20:00-05:00 log_file=output/logs/run_20260420T061643Z_543fa224714b.log
